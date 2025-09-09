@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #c9c9c9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+        .container {
+            width: 600px;
+            height: 400px;
+            background-color: white;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .container input {
+            padding: 12px 32px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+        }
+        .container select {
+            padding: 10px 32px;
+            font-size: 20px;
+        }
+        #submit:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="" id="first" placeholder="Operand">
+        
+        <select id="operator">
+            <option value=""></option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        
+        <input type="" id="second" placeholder="Operand">
+        
+        <input type="submit" value="Try me!" onclick="calculate()" id="submit"/>
+    </div>
+    <script>
+        function calculate() {
+            const first = parseInt(document.getElementById("first").value);
+            const operator = document.getElementById("operator").value;
+            const second = parseInt(document.getElementById("second").value);
+            let result = 0;
+
+            if (isNaN(first) || isNaN(second) || first < 0 || second < 0) {
+                alert('Error :(');
+                console.log('Error :(');
+                return;
+            }
+
+            if (operator == "%" && second == 0) {
+                alert("It\’s over 9000!");
+                console.log("It\'s over 9000!");
+                return;
+            }
+
+            if (operator == "+") {
+                result = first + second;
+            } else if (operator == "-") {
+                result = first - second;
+            } else if (operator == "*") {
+                result = first * second;
+            } else if (operator == "/") {
+                if (second == 0) {
+                    alert("It's over 9000!");
+                    console.log("It\'s over 9000!");
+                    return;
+                }
+                result = first / second;
+            } else if (operator == "%") {
+                if (second == 0) {
+                    alert("It's over 9000!");
+                    console.log("It\'s over 9000!");
+                    return;
+                }
+                result = first % second;
+            } else {
+                alert('Error :(');
+                console.log('Error :(');
+                return;
+            }
+
+            alert(`${result}`);
+            console.log(`${result}`);
+        }
+        setInterval(() => {
+            alert('Please, use me...');
+            console.log('Please, use me...');
+        }, 30000);
+    </script>
+</body>
+</html>

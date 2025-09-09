@@ -1,0 +1,30 @@
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+td {
+    border: 1px solid black;
+    width: 400px;
+    height: auto;
+    padding: 30px 0;
+}
+td:nth-child(1) {
+    background-color: aquamarine;
+}
+td:nth-child(2) {
+    background-color: gold;
+}
+@media (max-width: 600px) {
+    table, td {
+        display: block;
+        width: auto;  
+        border: 0px;
+    }
+    td {
+        border: 1px solid black;
+        width: 400px;
+        box-sizing: border-box;
+    }
+}

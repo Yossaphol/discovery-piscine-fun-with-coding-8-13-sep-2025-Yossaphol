@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax Example</title>
+  <style>
+    *{
+      margin:0; padding:0; box-sizing:border-box;
+    }
+    body{
+      font-family: Arial, sans-serif;
+      line-height:1.6;
+      color:#fff;
+      text-align:center;
+    }
+
+    .parallax{
+      height:100vh;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .parallax h1{
+      font-size:2em;
+    }
+
+    .block{
+      background:#000;
+      padding:420px 20px;
+    }
+    .block h2{
+      font-size:1.8em;
+      color:#f4f4f4;
+    }
+
+    .bg1{
+        background-image: url('./chloe-combs-k4O4ogTz-wA-unsplash.jpg');
+    }
+    .bg2{background-image:url('./danny-greenberg-VzUXMJ-zV_Q-unsplash.jpg');}
+  </style>
+</head>
+<body>
+  <section class="parallax bg1">
+    <h1>flower</h1>
+  </section>
+
+  <section class="block">
+    <h2>Hi from 42bkk!</h2>
+  </section>
+
+  <section class="parallax bg2">
+    <h1>laundry</h1>
+  </section>
+</body>
+</html>

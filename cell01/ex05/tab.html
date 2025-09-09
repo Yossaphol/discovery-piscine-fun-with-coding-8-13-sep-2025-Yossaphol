@@ -5,31 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container {
-            display: flex;
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
         }
-        .box {
+        td {
+            border: 1px solid black;
             width: 400px;
             height: auto;
             padding: 30px 0;
-            border: 1px solid black;
         }
-        .box:nth-child(1) {
+        td:nth-child(1) {
             background-color: aquamarine;
         }
-        .box:nth-child(2) {
+        td:nth-child(2) {
             background-color: gold;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="box">
-            <p>First cell</p>
-        </div>
-        <div class="box">
-            <p>Second cell</p>
-        </div>
-    </div>
+    <table>
+        <td>First cell</td>
+        <td>Second cell</td>
+    </table>
 </body>
 </html>

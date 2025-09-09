@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle {
+            background-color: red;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            transition: ease-in-out .3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="circle" id="balloon"></div>
+    <script>
+        let balloon = document.getElementById('balloon');
+        let size = 200;
+        let colors = ['red', 'green', 'blue'];
+        let colorIndex = 0;
+
+        function updateBalloon() {
+            balloon.style.width = size + 'px';
+            balloon.style.height = size + 'px';
+            balloon.style.backgroundColor = colors[colorIndex];
+        }
+
+        balloon.onclick = function() {
+            if (size+10 < 420) {
+                size += 10;
+                colorIndex = (colorIndex + 1) % colors.length;
+                // console.log(colorIndex);
+            } else {
+                size = 200;
+            }
+            updateBalloon();
+        }
+
+        balloon.onmouseleave = function() {
+            if (size > 200) {
+                size -= 5;
+                colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+            }
+            updateBalloon();
+        }
+
+        updateBalloon();
+    </script>
+</body>
+</html>

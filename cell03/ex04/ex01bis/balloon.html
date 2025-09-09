@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle {
+            background-color: red;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            transition: ease-in-out .3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="circle" id="balloon"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <script>
+        let balloon = document.getElementById('balloon');
+        let size = 200;
+        let colors = ['red', 'green', 'blue'];
+        let colorIndex = 0;
+
+        function updateBalloon() {
+            $('#balloon').css({
+                width: size + 'px',
+                height: size + 'px',
+                backgroundColor: colors[colorIndex]
+            });
+        }
+
+        $('#balloon').on('click', function() {
+            if (size < 420) {
+                size += 10;
+                colorIndex = (colorIndex + 1) % colors.length;
+            } else {
+                size = 200;
+            }
+            updateBalloon();
+        });
+
+        $('#balloon').on('mouseleave', function() {
+            if (size > 200) {
+                size -= 5;
+                colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+            }
+            updateBalloon();
+        });
+
+        updateBalloon();
+    </script>
+</body>
+</html>

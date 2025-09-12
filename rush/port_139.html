@@ -11,10 +11,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 20px;
             background-color: #deeaf391;
+            margin: 0px;
         }
         .container {
+            margin: 20px;
             display: flex;
             margin-top: 20px;
             flex-direction: column;
@@ -113,6 +114,17 @@
             box-shadow: 0px 4px 5px rgba(25, 0, 255, 0.2) ;
         }
 
+        footer {
+            position: static;
+            bottom: 0;
+            width: 100%;
+            background-color: #000000;
+            display: flex;
+            color: #ffffff;
+            justify-content: center;
+            align-items: center;
+        }
+
         .navbar {
             position: fixed;
             top: 0;
@@ -141,12 +153,12 @@
             padding-right: 20px;
         }
 
-        .list {
+        .toggle {
             display: none;
             transition: transform 0.2s;
         }
 
-        .list:hover {
+        .toggle:hover {
             transform: scale(1.1);
         }
 
@@ -180,8 +192,16 @@
             .navbar .nav-links {
                 display: none;
             }
+
+            .navbar .nav-links.show {
+                display: flex;
+                flex-direction: column;
+                margin-right: 50px;
+                
+                
+            }
             
-            .list {
+            .toggle {
                 display: flex;
                 color: #ffffff;
                 margin-right: 20px;
@@ -193,7 +213,7 @@
 <body>
     <nav class="navbar">
         <a href="#home" class="logo">Portfolio</a>
-        <div class="list">
+        <div class="toggle">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
             </svg>
@@ -284,7 +304,16 @@
         </div>
     </div>
     <footer>
-
+        <h6>Thank you ;-;</h6>
     </footer>
+
+    <script>
+        const toggle = document.querySelector(".toggle");
+        const nav = document.querySelector(".nav-links");
+
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("show");
+        });
+    </script>
 </body>
 </html>

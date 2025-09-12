@@ -71,13 +71,11 @@ nav li a:hover::after {
 .parallax{
     height: 60vh;
     background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     display:flex;
     flex-direction: column;
     /* align-items:center; */
     justify-content:center;
+    background: linear-gradient(45deg, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
 }
 .parallax .text {
     margin-left: 160px;
@@ -94,34 +92,65 @@ nav li a:hover::after {
 }
 
 .bg1{
-    background-image: url('./chloe-combs-k4O4ogTz-wA-unsplash.jpg');
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+        url('./p4.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 /* about */
 .about {
-    height: 400px;
+    height: auto;
     background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 60px 0;
 }
 .about h1{
     background: linear-gradient(45deg, #2870ff, #00b3ff);
     color: transparent;
     background-clip: text;
     font-size: 48px;
+    margin-bottom: 30px;
     font-weight: bold;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.about .container {
+    width: 80%;
+    height: auto;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    span {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 20px;
+    }
+}
+.about .container img{
+    height: 300px;
+    width: 240px;
+    object-fit: cover;
+    border-radius: 16px;
+}
 /* project */
 .project {
     background-color: #edf3ff;
-    height: 440px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    padding: 60px 0;
 }
 .project h1 {
     font-size: 48px;
@@ -138,7 +167,9 @@ nav li a:hover::after {
     height: auto;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 40px;
+    margin-top: 40px;
 }
 .project .container a{
     text-decoration: none;
@@ -156,6 +187,7 @@ nav li a:hover::after {
     width: 100%;
     height: 200px;
     overflow: hidden;
+    border-radius: 16px;
 }
 .project .container .card img{
     width: 356px;
@@ -183,7 +215,7 @@ nav li a:hover::after {
 .project .container .card .name p{
     font-size: 12px;
     padding: 12px 10px 12px 12px;
-    color: #656565;
+    color: #777;
 }
 .project .container .card .content .explore {
     padding: 12px;
@@ -221,7 +253,7 @@ nav li a:hover::after {
     color: #333;
 }
 #Contact a:hover{
-    color: #333333aa;
+    color: #2870ff;
 }
 #Contact .hr {
     color: #2870ff;
@@ -240,5 +272,85 @@ nav li a:hover::after {
     margin-top: 6px;
 }
 .footer {
-    color: #6e88ba;
+    color: #2870ff;
+}
+
+@media (max-width: 720px) {
+    /* Navbar */
+    nav {
+        flex-direction: column;
+        padding: 12px 20px;
+        gap: 12px;
+        z-index: 2;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    /* Home */
+    .parallax {
+        height: 70vh;
+        background-attachment: scroll;
+        text-align: center;
+        padding: 0 12px;
+    }
+    .parallax .text {
+        margin: 0;
+    }
+    .parallax .text h1 {
+        font-size: 36px;
+    }
+    .parallax .text h4 {
+        font-size: 20px;
+    }
+
+    /* About */
+    .about .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+    }
+    .about .container img {
+        width: 200px;
+        height: auto;
+    }
+    .about .container span {
+        flex-direction: column;
+        gap: 6px;
+    }
+    .about .container p {
+        font-size: 16px;
+    }
+
+    /* Project */
+    .project .container .card {
+        width: 100%;
+    }
+
+    /* Contact */
+    #Contact {
+        height: auto;
+        padding: 40px 20px;
+        text-align: center;
+    }
+    #Contact h1 {
+        font-size: 28px;
+    }
+    #Contact .icon {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #Contact .footer {
+        justify-content: center;
+        text-align: center;
+    }
 }
